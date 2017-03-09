@@ -1,4 +1,4 @@
-"# Coder" 
+# Coder
 Aplikasi Coder atau disebut Competition Holder ini adalah aplikasi Pengelola Lomba.
 
 Pengembang = Miranti, Aldika, Dadan, Rio
