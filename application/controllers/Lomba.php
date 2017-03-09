@@ -12,10 +12,21 @@ defined('BASEPATH') OR exit('No direct script allowed');
 		// }
 
 		function index(){
-			// $this->load->model("lomba_model");
-
-			// $data['result'] = $this->lomba_model->read();
-
+			$data['username'] = $this->session->userdata('username');
+			$data['level'] = $this->session->userdata('level');
+			$this->load->model("Lomba_model");
+			$cat = @$_GET['cat'];
+			if($cat) {
+				$sort = array (
+					"kategori" => $cat
+				);
+			} else {
+				$sort = array();
+			}
+			$data['result'] = $this->Lomba_model->readcat();
+			$data['resultcompetition'] = $this->Lomba_model->read($sort);
+			$data['tags'] = $this->Lomba_model->readtags();
+			
 			$data['view'] = "lomba/v_list";
 			$this->load->view("index", $data);
 		}

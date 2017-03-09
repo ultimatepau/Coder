@@ -75,8 +75,8 @@
                 </div>
                 <div class="collapse navbar-collapse">
                     <ul class="nav navbar-nav navbar-right">
-                        <li class="active"><a href="<?php echo site_url('home/index') ?>">Home</a></li>
-                        <li><a href="<?php echo site_url('lomba/index') ?>">Competition</a></li>                                       
+                        <li class="active"><a href="<?php echo site_url('home/') ?>">Home</a></li>
+                        <li><a href="<?php echo site_url('lomba/') ?>">Competition</a></li>                                       
                         <li class="dropdown" aria-labelledby="dropdownMenuDivider"><a href="#"><i class="glyphicon glyphicon-user"></i></a>
                             <ul role="menu" class="sub-menu">
 								<?php if (!($level)) {?>

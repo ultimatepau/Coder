@@ -11,9 +11,32 @@ defined('BASEPATH') OR exit('No direct script allowed');
 			if (!empty($where) ) $this->db->where($where);
 			if (!empty($order) ) $this->db->where($order);
 
-			$this->db->join("login","login.username = lomba.username");
+			$this->db->join('kategori_lomba','lomba.id_kategori = kategori_lomba.id_kategori');
+			$query = $this->db->get("lomba");
+			if ($query AND $query->num_rows() != 0){
+				return $query->result();
+			} else {
+				return array();
+			}
+		}
+		
+		function readtags($where="", $order=""){
+			if (!empty($where) ) $this->db->where($where);
+			if (!empty($order) ) $this->db->where($order);
+			
+			$query = $this->db->get("lomba");
+			if ($query AND $query->num_rows() != 0){
+				return $query->result();
+			} else {
+				return array();
+			}
+		}
+		
+		function readcat($where="", $order=""){
+			if (!empty($where) ) $this->db->where($where);
+			if (!empty($order) ) $this->db->where($order);
 
-			$query = $this->db->get("");
+			$query = $this->db->get("kategori_lomba");
 			if ($query AND $query->num_rows() != 0){
 				return $query->result();
 			} else {

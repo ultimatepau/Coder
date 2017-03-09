@@ -11,6 +11,7 @@ class User extends CI_Controller
 	{
 		$data['username'] = $this->session->userdata('username');
 		$data['level'] = $this->session->userdata('level');
+		
 		$username = $this->session->userdata('username');
 		$this->load->model("User_model");
 		
@@ -21,6 +22,9 @@ class User extends CI_Controller
 
 	function user_lomba()
 	{
+		$data['username'] = $this->session->userdata('username');
+		$data['level'] = $this->session->userdata('level');
+		
 		$this->load->model("user_model");
 
 		$data['result'] = $this->user_model->read();
