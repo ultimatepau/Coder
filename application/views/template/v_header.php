@@ -99,10 +99,10 @@
                     </ul>
                 </div>
                 <div class="search">
-                    <form role="form">
+                    <form role="form" method="get" action="<?=base_url("lomba")?>">
                         <i class="fa fa-search"></i>
                         <div class="field-toggle">
-                            <input type="text" class="search-form" autocomplete="off" placeholder="Search">
+								<input type="text" class="search-form" autocomplete="off" name="s" placeholder="Search">
                         </div>
                     </form>
                 </div>

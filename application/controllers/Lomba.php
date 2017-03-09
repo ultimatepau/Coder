@@ -16,15 +16,20 @@ defined('BASEPATH') OR exit('No direct script allowed');
 			$data['level'] = $this->session->userdata('level');
 			$this->load->model("Lomba_model");
 			$cat = @$_GET['cat'];
-			if($cat) {
+			$s = @$_GET['s'];
+			if($s){
+				$data['resultcompetition'] = $this->Lomba_model->read("nama_lomba like '%$s%'");
+			}
+			else if($cat) {
 				$sort = array (
 					"kategori" => $cat
 				);
+				$data['resultcompetition'] = $this->Lomba_model->read($sort);
 			} else {
 				$sort = array();
+				$data['resultcompetition'] = $this->Lomba_model->read($sort);
 			}
 			$data['result'] = $this->Lomba_model->readcat();
-			$data['resultcompetition'] = $this->Lomba_model->read($sort);
 			$data['tags'] = $this->Lomba_model->readtags();
 			
 			$data['view'] = "lomba/v_list";
