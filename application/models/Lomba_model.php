@@ -33,11 +33,10 @@ defined('BASEPATH') OR exit('No direct script allowed');
 			}
 		}
 		
-		function readcat($where="", $order=""){
-			if (!empty($where) ) $this->db->where($where);
-			if (!empty($order) ) $this->db->where($order);
-
-			$query = $this->db->get("kategori_lomba");
+		function readcat(){
+			$query = $this->db->query("	SELECT kategori_lomba.kategori, COUNT(lomba.nama_lomba) as lol FROM kategori_lomba 
+										INNER JOIN lomba ON kategori_lomba.`id_kategori` = lomba.`id_kategori`
+										GROUP BY lomba.`id_kategori`;");
 			if ($query AND $query->num_rows() != 0){
 				return $query->result();
 			} else {

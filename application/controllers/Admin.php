@@ -9,6 +9,8 @@ class Admin extends CI_Controller
 	
 	function dataHolder()
 	{
+		$data['username'] = $this->session->userdata('username');
+		$data['level'] = $this->session->userdata('level');
 		$this->load->model("admin_model");
 
 		$data['result'] = $this->admin_model->readHolder();
@@ -19,6 +21,8 @@ class Admin extends CI_Controller
 
 	function dataLomba()
 	{
+		$data['username'] = $this->session->userdata('username');
+		$data['level'] = $this->session->userdata('level');
 		$this->load->model("admin_model");
 
 		$data['result'] = $this->admin_model->readLomba();

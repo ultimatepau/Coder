@@ -39,14 +39,14 @@
                               ?>
                                 <tr>
                                     <td><?php echo $i++ ?></td>
-                                    <td><?php echo $row->no_ktp ?></td>
+                                    <td><?php echo $row->no_ktp?></td>
                                     <td><?php echo $row->id_holder ?></td>
                                     <td><?php echo $row->nama_lengkap ?></td>
                                     <td><?php echo $row->email ?></td>
                                     <td><?php echo $row->instansi ?></td>
                                     <td><?php echo $row->link_perusahaan ?></td>
                                     <td>
-                                        <a href="<?php echo site_url("admin/deleteHd")?>" class="btn btn-danger"><span class="glyphicon glyphicon-trash"></span></a>
+                                        <a href="<?php echo site_url("admin/deleteHd/") . $row->id_holder?>" class="btn btn-danger"><span class="glyphicon glyphicon-trash"></span></a>
                                     </td>
                                 </tr>
                               <?php } ?>

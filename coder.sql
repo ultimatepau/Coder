@@ -70,7 +70,7 @@ CREATE TABLE `lomba` (
   KEY `fk_id_kategori` (`id_kategori`),
   CONSTRAINT `fk_id_kategori` FOREIGN KEY (`id_kategori`) REFERENCES `kategori_lomba` (`id_kategori`),
   CONSTRAINT `lomba_ibfk_1` FOREIGN KEY (`id_holder`) REFERENCES `holder` (`id_holder`)
-) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=9 DEFAULT CHARSET=latin1;
 
 /* Trigger structure for table `holder` */
 
@@ -81,6 +81,29 @@ DELIMITER $$
     END */$$
 
 
+DELIMITER ;
+
+/* Trigger structure for table `holder` */
+
+DELIMITER $$
+
+/*!50003 CREATE */ /*!50017 DEFINER = 'root'@'localhost' */ /*!50003 TRIGGER `delete holder` BEFORE DELETE ON `holder` FOR EACH ROW BEGIN
+	delete from lomba where id_holder = old.id_holder;
+    END */$$
+
+
+DELIMITER ;
+
+/* Procedure structure for procedure `getCat` */
+
+DELIMITER $$
+
+/*!50003 CREATE DEFINER=`root`@`localhost` PROCEDURE `getCat`()
+BEGIN
+	SELECT kategori_lomba.kategori, COUNT(lomba.nama_lomba) FROM kategori_lomba 
+INNER JOIN lomba ON kategori_lomba.`id_kategori` = lomba.`id_kategori`
+GROUP BY lomba.`id_kategori`;
+    END */$$
 DELIMITER ;
 
 /*!40101 SET SQL_MODE=@OLD_SQL_MODE */;

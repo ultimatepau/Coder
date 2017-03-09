@@ -40,7 +40,7 @@
                                     <td><?php echo $row->nama_lomba ?></td>
                                     <td><?php echo $row->kategori ?></td>
                                     <td>
-                                        <a href="<?php echo site_url("admin/deleteLb")?>" class="btn btn-danger"><span class="glyphicon glyphicon-trash"></span></a>
+                                        <a href="<?php echo site_url("admin/deleteLb/") . $row->kd_lomba?>" class="btn btn-danger"><span class="glyphicon glyphicon-trash"></span></a>
                                     </td>
                                 </tr>
                                 <?php } ?>
