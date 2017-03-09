@@ -62,7 +62,7 @@
                         <div class="sidebar-item categories">
                             <h3>Categories</h3>
                             <ul class="nav navbar-stacked">
-							<li><a href="<?=base_url()?>lomba">All Categories<span class="pull-right">(1)</span></a></li>
+							<li><a href="<?=base_url()?>lomba">All Categories<span class="pull-right"></span></a></li>
 							<?php foreach ($result as $row) {?>
                                 <li><a href="<?=base_url()?>lomba?cat=<?= $row->kategori?>"><?= $row->kategori?><span class="pull-right">(<?= $row->lol?>)</span></a></li>
 							<?php } ?>
