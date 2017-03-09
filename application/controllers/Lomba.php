@@ -31,7 +31,13 @@ defined('BASEPATH') OR exit('No direct script allowed');
 			$this->load->view("index", $data);
 		}
 
-		function show(){
+		function show($id){
+			$data['username'] = $this->session->userdata('username');
+			$data['level'] = $this->session->userdata('level');
+			
+			$this->load->model("Lomba_model");
+			$data['result'] = $this->Lomba_model->read("kd_lomba = '$id'");
+			
 			$data['view'] = "lomba/v_details";
 			$this->load->view("index", $data);
 		}

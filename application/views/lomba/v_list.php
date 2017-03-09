@@ -24,17 +24,17 @@
                             <div class="portfolio-wrapper">
                                 <div class="portfolio-single">
                                     <div class="portfolio-thumb">
-                                        <img src="<?php echo base_url("media")?>/dist/image/portfolio/thumbnails/3.jpg" class="img-responsive" alt="">
+                                        <img src="<?php echo base_url("/gambar/"). $row->poster?>" class="img-responsive" alt="">
                                     </div>
                                     <div class="portfolio-view">
                                         <ul class="nav nav-pills">
-                                            <li><a href="<?php echo site_url('lomba/show') ?>"><i class="fa fa-link"></i></a></li>
-                                            <li><a href="<?php echo base_url("media")?>/dist/image/portfolio/thumbnails/3.jpg" data-lightbox="example-set"><i class="fa fa-eye"></i></a></li>
+                                            <li><a href="<?php echo site_url('lomba/show/') . $row->kd_lomba ?>"><i class="fa fa-link"></i></a></li>
+                                            <li><a href="<?php echo base_url("/gambar/"). $row->poster?>" data-lightbox="example-set"><i class="fa fa-eye"></i></a></li>
                                         </ul>
                                     </div>
                                 </div>
                                 <div class="portfolio-info ">
-                                    <h2>Photography</h2>
+                                    <h2><?= $row->nama_lomba?></h2>
                                 </div>
                             </div>
                         </div>

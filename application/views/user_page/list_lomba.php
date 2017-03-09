@@ -25,7 +25,7 @@
                             <div class="modal fade bs-example-modal-lg" tabindex="-1" role="dialog">
                               <div class="modal-dialog modal-lg" role="document">
                                 <div class="modal-content">
-                                <form action="<?php echo site_url("user/do_tambah")?>" method="post">
+                                <form action="<?php echo site_url("user/do_tambah")?>" method="post" enctype="multipart/form-data">
                                   <div class="modal-header">
                                     <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true"></span>&times;</button>
                                     <h4 class="modal-title">Add Competition</h4>
@@ -67,7 +67,7 @@
                                             <input type="date" class="form-control" name="tgl_pendaftaran" placeholder="Tempat Lahir">
                                           </div>
                                           <div class="form-group">
-                                            <label>Competation Date</label>    
+                                            <label>Competition Date</label>    
                                             <input type="date" class="form-control" name="tgl_pengumpulan" placeholder="Tanggal Lahir">
                                           </div>
                                         </div>
@@ -98,16 +98,18 @@
                                 </tr>
                             </thead>
                             <tbody>
+							<?php $a = 0;foreach ($result as $row) {?>
                                 <tr>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
+                                    <td><?= $a++?></td>
+                                    <td><?= $row->nama_lomba?></td>
+                                    <td><?= $row->kategori?></td>
                                     <td>
                                         <button class="btn">Edit</button>
                                         <button class="btn">Delete</button>
                                         <button class="btn">Detail</button>
                                     </td>
                                 </tr>
+							<?php } ?>
                             </tbody>
                         </table>
                     </div>

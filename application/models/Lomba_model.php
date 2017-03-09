@@ -12,6 +12,7 @@ defined('BASEPATH') OR exit('No direct script allowed');
 			if (!empty($order) ) $this->db->where($order);
 
 			$this->db->join('kategori_lomba','lomba.id_kategori = kategori_lomba.id_kategori');
+			$this->db->join('holder','lomba.id_holder = holder.id_holder');
 			$query = $this->db->get("lomba");
 			if ($query AND $query->num_rows() != 0){
 				return $query->result();
